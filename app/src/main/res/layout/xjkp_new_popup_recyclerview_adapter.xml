@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/iv_xjkp_type_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/tabbar_compose_idea" />
+
+    <TextView
+        android:id="@+id/tv_xjkp_type_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_xjkp_type_icon"
+        android:clickable="true"
+        android:text="文字"
+        android:textColor="#000000" />
+
+</RelativeLayout>

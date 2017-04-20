@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xjkp_rl_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_xjkp_one_fragment_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_set_title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#00acff"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/xjkp_iv_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/xjkp_back" />
+
+            <TextView
+                android:id="@+id/rl_fragment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="标题" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_set_title"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_jiancharen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/xjkp_tv_jiancharen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@mipmap/xjkp_jiancharen"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:text="范文轲" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_beijiancharen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/xjkp_tv_beijiancharen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:text="被检查人"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!--android:drawableLeft="@mipmap/xjkp_beijiancheren"-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/xjkp_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="时间"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <!--android:drawableLeft="@mipmap/xjkp_time"-->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_zongfen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/xjkp_tv_zongfen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:drawableLeft="@mipmap/xjkp_zongfen"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="总分: 0" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rl_paizhao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_dianji_bg"
+                    android:gravity="center"
+                    android:onClick="paizhao">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@mipmap/icon_paizhao" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/xjkp_tv_paizhao"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="拍照" />-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bz_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_dianji_bg"
+                    android:gravity="center"
+                    android:onClick="note">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:src="@mipmap/xjkp_zongfen" />
+                    <!--<TextView-->
+                    <!--android:id="@+id/xjkp_tv_paizhao"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="拍照" />-->
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

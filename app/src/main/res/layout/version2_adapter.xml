@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--android:descendantFocusability="blocksDescendants"-->
+    <RelativeLayout
+        android:id="@+id/xjkp_rl_title1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:id="@+id/rl_onw1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_one2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="1."
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/xjkp_tv_title_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_toRightOf="@+id/tv_one2"
+                android:text="@string/di1ti"
+                android:textSize="17sp"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_onw1"
+            android:visibility="gone">
+
+            <com.fwk.lkxj3.android.ui.version2.MyGridView
+                android:id="@+id/xjkp_gv_xuanxiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:numColumns="3"
+                android:layout_marginLeft="10dp"
+                android:visibility="visible"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl_onw1"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/jian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/select_jian"/>
+            <TextView
+                android:id="@+id/zhong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/zhongjian"
+                android:textColor="@color/black"
+                android:gravity="center"/>
+            <ImageView
+                android:id="@+id/jia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/select_jia"/>
+            <TextView
+                android:id="@+id/zudazhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/transparent_black"
+                android:text="@string/fenzhiqujian"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

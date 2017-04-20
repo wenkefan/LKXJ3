@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">乐康巡检</string>
+    <string name="action_settings">Settings</string>
+    <string name="processing_wait_for">处理中，请稍等&#8230;</string>
+    <string name="android_name">园务巡检</string>
+
+    <string name="fragment_history">记录</string>
+    <string name="fragment_statistic">统计</string>
+    <string name="shangyiye">上一页</string>
+    <string name="xiayiye">下一页</string>
+
+    <string name="di1ti">教室地面干净、墙面干净、电风扇无灰尘、室内无蜘蛛网</string>
+    <string name="Version_number_is_wrong">版本号错误</string>
+    <string name="fenzhiqujian">(％1$s ~ ％2$s)</string>
+
+    <!--photo-->
+    <string name="saved_faild">保存失败</string>
+    <string name="save_big_image">保存图片</string>
+    <string name="save_image_aready">已保存->图库查看,图片地址: \n %s</string>
+    <string name="app_root_name">PhotoPickDemo</string>
+</resources>

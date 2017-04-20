@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_note"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fwk.lkxj3.android.ui.version2.NoteActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_note_titles"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00acff">
+
+        <ImageView
+            android:id="@+id/xjkp_iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:onClick="back"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@mipmap/xjkp_back" />
+
+        <TextView
+            android:id="@+id/rl_fragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="备注"
+            android:textSize="20dp"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/note_wc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="10px"
+            android:textSize="18dp"
+            android:text="完成"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/note_contents"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"
+        android:enabled="true"
+        android:gravity="top"
+        android:hint="请填写您的备注"
+        android:inputType="textMultiLine"
+        android:maxLength="200"
+        android:maxLines="10"
+        android:minLines="8"
+        android:scrollbars="vertical"></EditText>
+
+</LinearLayout>

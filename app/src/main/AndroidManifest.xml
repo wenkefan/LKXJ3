@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fwk.lkxj3">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 缓存资源优先存入SDcard -->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".android.ui.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".android.ui.LoginActivity" />
+        <activity android:name=".android.ui.MainActivity" />
+        <activity android:name=".MVP.ui.MVP_MainActivity" />
+        <activity android:name=".android.ui.TypeList" />
+        <activity android:name=".android.ui.NewTypeActivity" />
+        <activity android:name=".android.ui.ShowTypeListActivity" />
+        <activity android:name=".android.ui.LookPhotoActivity" />
+        <activity android:name=".android.ui.version2.TimuListActivity" />
+        <activity android:name=".android.ui.version2.PaizhaoActivity" />
+        <activity android:name=".android.ui.version2.SelectActivity" />
+        <activity android:name=".android.ui.version2.SelectTeacherActivity" />
+        <activity android:name=".photo.PhotoPagerActivity" />
+        <activity android:name=".photo.PhotoNo" />
+        <activity android:name=".android.ui.version2.NoteActivity"></activity>
+    </application>
+
+</manifest>

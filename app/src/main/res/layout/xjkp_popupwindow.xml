@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_xjkp_popupwindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/iv_xjkp_close"
+        android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/iv_xjkp_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="78dip"
+        android:src="@mipmap/tabbar_compose_background_icon_close" />
+</RelativeLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rl_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_set_title"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_jiancharen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/xjkp_tv_jiancharen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="范文轲"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <!--android:drawableLeft="@mipmap/xjkp_jiancharen"-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_beijiancharen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/xjkp_tv_beijiancharen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="被检查人"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <!--android:drawableLeft="@mipmap/xjkp_beijiancheren"-->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_set_title"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/aaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="检查时间:"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/xjkp_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/aaa"
+                android:gravity="center"
+                android:text="时间"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <!--android:drawableLeft="@mipmap/xjkp_time"-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_zongfen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/xjkp_tv_zongfen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="总分: 0"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <!--android:drawableLeft="@mipmap/xjkp_zongfen"-->
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_bz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="备注:"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/bzc_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:text="备注内容"
+            android:textColor="#666"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/xjkp_view" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="检查项目："
+            android:textColor="@color/gray"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_chakanzhaopian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看照片"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/xjkp_lv_show_typelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+</LinearLayout><!--</ScrollView>-->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xjkp_rl_title"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:background="#00acff">
+    <ImageView
+        android:id="@+id/xjkp_iv_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/xjkp_back"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"/>
+    <TextView
+        android:id="@+id/xjkp_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="22sp"
+        android:textColor="@color/whites"
+        android:text="标题" />
+
+    <ImageView
+        android:id="@+id/xjkp_iv_new"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/xjkp_icon_new"
+        android:background="@drawable/select_dianji_bg"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        />
+</RelativeLayout>

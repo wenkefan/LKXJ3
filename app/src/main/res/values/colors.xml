@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="history_no">#2c2c2c</color>
+    <color name="history_yes">#0061b2</color>
+    <color name="statistic_no">#2c2c2c</color>
+    <color name="statistic_yes">#0061b2</color>
+
+
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+
+
+    <color name="page_backgroup">#f2f2f2</color>
+    <!-- 灰色 -->
+    <color name="grey_color1">#333333</color>
+    <color name="grey_color2">#666666</color>
+    <color name="grey_color3">#999999</color>
+
+
+    <color name="btn_logout_normal">#d33f3f</color>
+    <color name="btn_logout_pressed">#DA5A4D</color>
+
+</resources>

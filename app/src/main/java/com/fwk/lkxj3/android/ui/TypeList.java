@@ -73,6 +73,7 @@ public class TypeList extends BaseActvity implements AdapterView.OnItemClickList
     private String CheckObjectTable;
     private int CheckObjectCategory;
     private int CheckResultsId;
+    private int ManualChooseObject;
     //当前展示的第几天
     private int Day = 1;
     private int ZongDay;
@@ -125,6 +126,8 @@ public class TypeList extends BaseActvity implements AdapterView.OnItemClickList
         checkconclusionid = intent.getIntExtra(Keyword.KEY_CHECKCONCLUSIONID, 0);
         CheckObjectTable = intent.getStringExtra(Keyword.KEY_CHECKOBJECTTABLE);
         CheckObjectCategory = intent.getIntExtra(Keyword.KEY_CHECKOBJECTCATEGORY,0);
+        ManualChooseObject = intent.getIntExtra(Keyword.KEY_MANUALCHOOSEOBJECT,0);
+        LogUtils.d("ManualChooseObject--" + ManualChooseObject);
         setTitleString(titleName);
 //        setCombineChart();
     }
@@ -194,6 +197,7 @@ public class TypeList extends BaseActvity implements AdapterView.OnItemClickList
                         intent.putExtra(Keyword.KEY_TYPE_LIST_NAME, titleName);
                         intent.putExtra(Keyword.KEY_CHECKOBJECTTABLE,CheckObjectTable);
                         intent.putExtra(Keyword.KEY_CHECKOBJECTCATEGORY,CheckObjectCategory);
+                        intent.putExtra(Keyword.KEY_MANUALCHOOSEOBJECT,ManualChooseObject);
                         startActivity(intent);
                     }
                     initLeftRight();
@@ -284,6 +288,7 @@ public class TypeList extends BaseActvity implements AdapterView.OnItemClickList
         intent.putExtra(Keyword.KEY_TYPE_LIST_NAME, titleName);
         intent.putExtra(Keyword.KEY_CHECKOBJECTTABLE,CheckObjectTable);
         intent.putExtra(Keyword.KEY_CHECKOBJECTCATEGORY,CheckObjectCategory);
+        intent.putExtra(Keyword.KEY_MANUALCHOOSEOBJECT,ManualChooseObject);
         startActivity(intent);
     }
 

@@ -240,12 +240,14 @@ public class MainActivity extends BaseActvity implements Adapter_main_activity.O
         int checkConclusionid = listBeen.get(position).getCheckConclusionId();
         String CheckObjectTable = listBeen.get(position).getCheckObjectTable();
         int CheckObjectCategory = listBeen.get(position).getCheckObjectCategory();
+        int ManualChooseObject = listBeen.get(position).getManualChooseObject();
         Intent intent = new Intent(this, TypeList.class);
         intent.putExtra(Keyword.KEY_TYPE_LIST_NAME, name);
         intent.putExtra(Keyword.KEY_CHECKCATEGORYID, CheckCategoryId);
         intent.putExtra(Keyword.KEY_CHECKCONCLUSIONID, checkConclusionid);
         intent.putExtra(Keyword.KEY_CHECKOBJECTTABLE, CheckObjectTable);
         intent.putExtra(Keyword.KEY_CHECKOBJECTCATEGORY, CheckObjectCategory);
+        intent.putExtra(Keyword.KEY_MANUALCHOOSEOBJECT,ManualChooseObject);
         startActivity(intent);
     }
 }

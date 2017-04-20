@@ -58,6 +58,8 @@ public class Keyword {
     public static final String KEY_CHECKOBJECTTABLE = "KEY_CHECKOBJECTTABLE";
     //id
     public static final String KEY_CHECKOBJECTCATEGORY = "KEY_CHECKOBJECTCATEGORY";
+    //是否收到选择检查对象
+    public static final String KEY_MANUALCHOOSEOBJECT = "KEY_MANUALCHOOSEOBJECT";
 
     //详细内容
     public static final String KEY_CURRENT_NUMBER = "KEY_CURRENT_NUMBER";

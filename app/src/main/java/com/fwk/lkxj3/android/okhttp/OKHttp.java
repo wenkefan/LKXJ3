@@ -39,7 +39,7 @@ public class OKHttp {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                LogUtils.d(e.getMessage());
+                e.printStackTrace();
                 listener.Error();
             }
 

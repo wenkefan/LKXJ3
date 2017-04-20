@@ -128,6 +128,7 @@ public class TimuListActivity extends BaseActvity implements AdapterView.OnItemC
 
     private void init() {
         sp = new SharedPreferencesUtils();
+        sp.saveToShared(Keyword.SP_JIEGUO_TYPE,null);
         rlSetTitle.setVisibility(View.GONE);
         rlZongfen.setVisibility(View.GONE);
         xjkpTvJiancharen.setText(sp.getString(Keyword.LOGIN_NAME));
@@ -200,6 +201,7 @@ public class TimuListActivity extends BaseActvity implements AdapterView.OnItemC
                     break;
                 case FLAG2:
                     jieguoType = (JieguoType) cla;
+                    sp.saveToShared(Keyword.SP_JIEGUO_TYPE, jieguoType.getRerurnValue());
                     for (int i = 0; i < jieguoType.getRerurnValue().size(); i++) {
                         JiguoList.add(jieguoType.getRerurnValue().get(i).getDataDictionaryName());
                         fenshu.add(jieguoType.getRerurnValue().get(i).getLevelCode());
@@ -234,7 +236,6 @@ public class TimuListActivity extends BaseActvity implements AdapterView.OnItemC
                     listView.setAdapter(adapter);
                     break;
                 case FLAG2:
-                    sp.saveToShared(Keyword.SP_JIEGUO_TYPE, jieguoType);
                     switch (checkconclusionId) {
                         case 1:
                         case 2:

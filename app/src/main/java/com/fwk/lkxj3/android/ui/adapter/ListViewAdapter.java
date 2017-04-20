@@ -33,7 +33,7 @@ public class ListViewAdapter extends BaseAdapter {
             R.mipmap.xjkp_btn_radio_nomal_d, R.mipmap.xjkp_btn_radio_nomal_e};
     public ListViewAdapter(){
         sp = new SharedPreferencesUtils();
-        list = ((JieguoType) sp.queryForSharedToObject(Keyword.SP_JIEGUO_TYPE)).getRerurnValue();
+        list = (List<JieguoType.RerurnValueBean>) sp.queryForSharedToObject(Keyword.SP_JIEGUO_TYPE);
     }
 
     @Override

@@ -26,20 +26,32 @@ import java.util.List;
 public class ListViewAdapter extends BaseAdapter {
 
     GridOnItemListener listener;
-    public void setListener(GridOnItemListener listener){
+
+    public void setListener(GridOnItemListener listener) {
         this.listener = listener;
     }
 
     private int selectItem = -1;
     private SharedPreferencesUtils sp;
     private int item;
-    private List<JieguoType.RerurnValueBean> list = new ArrayList<>();
+    private List<JieguoType.RerurnValueBean> list;
     private int[] leftDrawables = {R.mipmap.xjkp_btn_radio_nomal_a, R.mipmap.xjkp_btn_radio_nomal_b, R.mipmap.xjkp_btn_radio_nomal_c,
             R.mipmap.xjkp_btn_radio_nomal_d, R.mipmap.xjkp_btn_radio_nomal_e};
-    public ListViewAdapter(int position){
+
+    public ListViewAdapter(int position) {
         sp = new SharedPreferencesUtils();
-        list = ((JieguoType) sp.queryForSharedToObject(Keyword.SP_JIEGUO_TYPE)).getRerurnValue();
         this.item = position;
+
+        try {
+            while (list == null) {
+                list = (List<JieguoType.RerurnValueBean>) sp.queryForSharedToObject(Keyword.SP_JIEGUO_TYPE);
+                LogUtils.d("检查结果类型URL---");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            list = new ArrayList<>();
+        }
+
     }
 
     @Override

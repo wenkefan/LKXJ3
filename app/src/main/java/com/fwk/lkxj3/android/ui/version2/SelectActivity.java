@@ -34,7 +34,7 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
     private static final int Flag = 1;
     private static final int Flag2 = 2;
     public static String TITLENAME;
-    private TextView tv;
+    private TextView title;
     private TextView name;
     private ListView listView;
     private SharedPreferencesUtils sp;
@@ -45,6 +45,8 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
     public String CheckObjectTable;
     public int CheckObjectCategory;
     private int CheckConclusionId;//检查结果类型
+    private int ManualChooseObject;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,13 +65,18 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
         TITLENAME = intent.getStringExtra(Keyword.KEY_TYPE_LIST_NAME);
         CheckObjectTable = intent.getStringExtra(Keyword.KEY_CHECKOBJECTTABLE);
         CheckObjectCategory = intent.getIntExtra(Keyword.KEY_CHECKOBJECTCATEGORY, 0);
+        ManualChooseObject = intent.getIntExtra(Keyword.KEY_MANUALCHOOSEOBJECT, 0);
+        LogUtils.d("ManualChooseObject--" + ManualChooseObject);
     }
 
     private void initView() {
         setNewTypeVisable(false);
         setTitleString(TITLENAME);
-        tv = (TextView) findViewById(R.id.xjkp_tv_selectobj_fragment);
-        name = (TextView) findViewById(R.id.xjkp_tv_selectobj_fragment);
+        title = (TextView) findViewById(R.id.tv_one1);
+//        name = (TextView) findViewById(R.id.xjkp_tv_selectobj_fragment);
+        if (ManualChooseObject == 0){
+            title.setText("请刷卡：");
+        }
         listView = (ListView) findViewById(R.id.xjkp_lv_selcetobj_fragment);
         listView.setOnItemClickListener(this);
     }
@@ -77,7 +84,7 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
     private void intURl() {
         OKHttp okHttp = OKHttp.getInstance();
         okHttp.setListener(this);
-        String url = String.format(HTTPURL.API_OBJECT_LIST, sp.getInt(Keyword.LOGIN_KGID),checkactegoryId);
+        String url = String.format(HTTPURL.API_OBJECT_LIST, sp.getInt(Keyword.LOGIN_KGID), checkactegoryId);
         LogUtils.d("检查对象：" + url);
         okHttp.getAsynHttp(Flag, url, QuYuBean.class);
     }
@@ -103,7 +110,7 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
                         }
                     });
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
 
             }
         } else {
@@ -133,14 +140,14 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
     };
 
     private void startActivity() {
-        Intent intent = new Intent(SelectActivity.this,TimuListActivity.class);
+        Intent intent = new Intent(SelectActivity.this, TimuListActivity.class);
         intent.putExtra(Keyword.KEY_CHECKCATEGORYID, checkactegoryId);
         intent.putExtra(Keyword.KEY_CHECKCONCLUSIONID, CheckConclusionId);
         intent.putExtra(Keyword.KEY_TYPE_LIST_NAME, TITLENAME);
-        intent.putExtra(Keyword.KEY_CHECKOBJECTTABLE,CheckObjectTable);
-        intent.putExtra(Keyword.KEY_CHECKOBJECTCATEGORY,CheckObjectCategory);
-        intent.putExtra(Keyword.KEY_DISTRICTID,DistrictId);
-        intent.putExtra(Keyword.KEY_NAME,Name);
+        intent.putExtra(Keyword.KEY_CHECKOBJECTTABLE, CheckObjectTable);
+        intent.putExtra(Keyword.KEY_CHECKOBJECTCATEGORY, CheckObjectCategory);
+        intent.putExtra(Keyword.KEY_DISTRICTID, DistrictId);
+        intent.putExtra(Keyword.KEY_NAME, Name);
         startActivity(intent);
         finish();
     }
@@ -152,25 +159,29 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
         listBean = (List<QuYuBean.RerurnValueBean>) sp.queryForSharedToObject(Keyword.SP_JIANCHADUIXIANG);
         for (QuYuBean.RerurnValueBean bean : listBean) {
 //            if (bean.getParentId() != 0) {
-                list.add(bean);
+            list.add(bean);
 //            }
         }
         adapter = new SelectJCObjAdapter(MyApplication.getContext(), list);
         listView.setAdapter(adapter);
-//        try {／
-            adapter.setSelectItme(-1);
-//        }
+        adapter.setSelectItme(-1);
     }
+
     private int DistrictId;
     private String Name;
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        adapter.setSelectItme(position);
-        adapter.notifyDataSetInvalidated();
-        DistrictId = list.get(position).getDistrictId();
-        Name = list.get(position).getName();
-        sp.setInt(Keyword.KEY_SELCET_OBJ, position);
-        startActivity();
+        if (ManualChooseObject == 1) {
+            adapter.setSelectItme(position);
+            adapter.notifyDataSetInvalidated();
+            DistrictId = list.get(position).getDistrictId();
+            Name = list.get(position).getName();
+            sp.setInt(Keyword.KEY_SELCET_OBJ, position);
+            startActivity();
+        } else if (ManualChooseObject == 0) {
+            ToastUtil.show("请刷卡！");
+        }
     }
 
     @Override
@@ -184,7 +195,7 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
         int cardnumber = 0;
         for (int position = 0; position < list.size(); position++) {
             if (list.get(position).getCardNo() != null) {
-                if (list.get(position).getCardNo().equals(cardid)){
+                if (list.get(position).getCardNo().equals(cardid)) {
                     adapter.setSelectItme(position);
                     adapter.notifyDataSetInvalidated();
                     sp.setInt(Keyword.KEY_SELCET_OBJ, position);
@@ -195,10 +206,11 @@ public class SelectActivity extends NFCActivity implements AdapterView.OnItemCli
                 }
             }
         }
-        if (cardnumber == 0){
+        if (cardnumber == 0) {
             ToastUtil.show("没有找到检查对象");
         }
     }
+
     @Override
     public void initNewTypeListener() {
 

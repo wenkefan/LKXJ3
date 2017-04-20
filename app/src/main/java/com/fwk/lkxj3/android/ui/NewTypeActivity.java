@@ -234,7 +234,7 @@ public class NewTypeActivity extends NFCActivity {
                     break;
                 case API_JIEGUO_OBJECT:
                     type = (JieguoType) cla;
-                    sp.saveToShared(Keyword.SP_JIEGUO_TYPE, type);
+                    sp.saveToShared(Keyword.SP_JIEGUO_TYPE, type.getRerurnValue());
                     for (int i = 0; i < type.getRerurnValue().size(); i++) {
                         JiguoList.add(type.getRerurnValue().get(i).getDataDictionaryName());
                         fenshu.add(type.getRerurnValue().get(i).getLevelCode());

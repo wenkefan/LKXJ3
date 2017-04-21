@@ -36,6 +36,9 @@
         <activity android:name=".photo.PhotoPagerActivity" />
         <activity android:name=".photo.PhotoNo" />
         <activity android:name=".android.ui.version2.NoteActivity"></activity>
+        <activity
+        android:name=".android.ui.PermissionsActivity"
+        android:screenOrientation="portrait" />
     </application>
 
 </manifest>

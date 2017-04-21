@@ -18,4 +18,9 @@
     <string name="save_big_image">保存图片</string>
     <string name="save_image_aready">已保存->图库查看,图片地址: \n %s</string>
     <string name="app_root_name">PhotoPickDemo</string>
+
+    <string name="help">帮助</string>
+    <string name="string_help_text">当前应用缺少必要权限。\n\n请点击\"设置\"-\"权限\"-打开所需权限。\n\n点击退出，即可返回。</string>
+    <string name="quit">退出</string>
+    <string name="settings">设置</string>
 </resources>

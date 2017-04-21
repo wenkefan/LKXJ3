@@ -1,5 +1,6 @@
 package com.fwk.lkxj3.android.ui.version2;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,10 +14,12 @@ import android.widget.GridView;
 import com.fwk.lkxj3.MyApplication;
 import com.fwk.lkxj3.R;
 import com.fwk.lkxj3.android.constant.Keyword;
+import com.fwk.lkxj3.android.ui.PermissionsActivity;
 import com.fwk.lkxj3.android.ui.adapter.Fragment_Photo_Adapter;
 import com.fwk.lkxj3.android.ui.fragment.SetImage;
 import com.fwk.lkxj3.common.activity.BaseActvity;
 import com.fwk.lkxj3.common.util.LogUtils;
+import com.fwk.lkxj3.common.util.PermissionsChecker;
 import com.fwk.lkxj3.common.util.ScreenUtils;
 import com.fwk.lkxj3.common.util.SharedPreferencesUtils;
 
@@ -38,6 +41,7 @@ public class PaizhaoActivity extends BaseActvity implements AdapterView.OnItemCl
     private String PhotoPath = null;
     private String time = "";
     private SharedPreferencesUtils sp;
+    private PermissionsChecker mPermissionsChecker; // 权限检测器
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +81,9 @@ public class PaizhaoActivity extends BaseActvity implements AdapterView.OnItemCl
         gridView.setNumColumns(2);
         gridView.setOnItemClickListener(this);
     }
-
+    // 所需的全部权限
+    static final String[] PERMISSIONS = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private static final int REQUEST_CODE = 0; // 请求码
     @Override
     protected void onResume() {
         super.onResume();
@@ -88,6 +94,15 @@ public class PaizhaoActivity extends BaseActvity implements AdapterView.OnItemCl
         }
         adapter.setImagePathList(imagePathList);
         adapter.notifyDataSetChanged();
+        /** 针对6.0的系统*/
+        mPermissionsChecker = new PermissionsChecker(this);
+        // 缺少权限时, 进入权限配置页面
+        if (mPermissionsChecker.lacksPermissions(PERMISSIONS)) {
+            startPermissionsActivity();
+        }
+    }
+    private void startPermissionsActivity() {
+        PermissionsActivity.startActivityForResult(this, REQUEST_CODE, PERMISSIONS);
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -106,6 +121,10 @@ public class PaizhaoActivity extends BaseActvity implements AdapterView.OnItemCl
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // 拒绝时, 关闭页面, 缺少主要权限, 无法运行
+        if (requestCode == REQUEST_CODE && resultCode == PermissionsActivity.PERMISSIONS_DENIED) {
+            finish();
+        }
         if (resultCode == Activity.RESULT_OK && requestCode == INTENT_CAMERA) { // 拍照
             setImagemt();
         }

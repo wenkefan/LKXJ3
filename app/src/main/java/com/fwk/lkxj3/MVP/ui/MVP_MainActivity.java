@@ -20,8 +20,8 @@ import butterknife.InjectView;
 public class MVP_MainActivity extends MVPBaseActivity<IMain_Activity_view,MainActivityPresenter> implements IMain_Activity_view {
 
 
-    @InjectView(R.id.xjkp2_iv_main_activity)
-    ImageView switchUser;
+//    @InjectView(R.id.xjkp2_iv_main_activity)
+//    ImageView switchUser;
     @InjectView(R.id.xjkp2_gv_main_activity)
     GridView gridView;
 
@@ -44,7 +44,8 @@ public class MVP_MainActivity extends MVPBaseActivity<IMain_Activity_view,MainAc
 
     @Override
     public ImageView getImageView() {
-        return switchUser;
+//        return switchUser;
+        return null;
     }
 
     @Override

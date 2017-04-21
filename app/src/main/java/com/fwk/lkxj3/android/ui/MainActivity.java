@@ -42,8 +42,8 @@ public class MainActivity extends BaseActvity implements Adapter_main_activity.O
     private static final int Flag1 = 1;
     private static final int Flag1_1 = 101;
     private static final int Flag2 = 2;
-    @InjectView(R.id.xjkp2_iv_main_activity)
-    ImageView xjkp2IvMainActivity;
+//    @InjectView(R.id.xjkp2_iv_main_activity)
+//    ImageView xjkp2IvMainActivity;
     @InjectView(R.id.xjkp2_gv_main_activity)
     ListView listView;
 

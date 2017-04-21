@@ -1,35 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:background="@mipmap/bg_card"
-    android:orientation="horizontal">
-    <TextView
-        android:id="@+id/xjkp_tv_adapter_name_type_list_activity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="#000000" />
-    <TextView
-        android:id="@+id/xjkp_tv_adapter_zongfen_list_activity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:textColor="#000000"/>
-    <TextView
-        android:id="@+id/xjkp_tv_adapter_time_type_list_activity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="15sp"
-        android:gravity="center"
-        android:textColor="@color/darkturquoise"/>
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#ffffffff"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/xjkp_tv_adapter_name_type_list_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/xjkp_tv_adapter_zongfen_list_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/xjkp_tv_adapter_time_type_list_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/darkturquoise"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

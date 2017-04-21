@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/tv_1_biaoti"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#ffffffff">
+
+    <!--app:cardCornerRadius="4dp"-->
+    <!--app:cardElevation="4dp"-->
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        android:padding="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_gravity="center_vertical"/>
-    <com.fwk.lkxj3.android.view.MyListView
-        android:id="@+id/lv_2_biaoti"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_1_biaoti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/left_shape"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:textSize="18dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f2f2"
+            />
+        <com.fwk.lkxj3.android.view.MyListView
+            android:id="@+id/lv_2_biaoti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dp"
+            android:divider="#f2f2f2"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

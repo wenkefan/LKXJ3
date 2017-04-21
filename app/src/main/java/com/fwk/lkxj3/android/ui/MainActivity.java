@@ -22,6 +22,7 @@ import com.fwk.lkxj3.android.constant.Keyword;
 import com.fwk.lkxj3.android.okhttp.HTTPURL;
 import com.fwk.lkxj3.android.okhttp.OKHttp;
 import com.fwk.lkxj3.common.activity.BaseActvity;
+import com.fwk.lkxj3.common.util.IconNumber;
 import com.fwk.lkxj3.common.util.LogUtils;
 import com.fwk.lkxj3.common.util.SharedPreferencesUtils;
 import com.fwk.lkxj3.common.util.ToastUtil;
@@ -224,6 +225,7 @@ public class MainActivity extends BaseActvity implements Adapter_main_activity.O
     protected void onDestroy() {
         super.onDestroy();
         typeBean = null;
+        IconNumber.Sujishu = 0;
 //        typeListBean = null;
     }
 

@@ -24,15 +24,6 @@ import java.util.List;
  */
 
 public class Adapter_main_activity extends BaseAdapter {
-    private int[] imageId = {R.mipmap.main_bjws,
-            R.mipmap.main_cfgz,
-            R.mipmap.main_rcjx,
-            R.mipmap.main_jxfk,
-            R.mipmap.main_tkpk,
-            R.mipmap.main_yrws,
-            R.mipmap.main_xcaq,
-            R.mipmap.main_xcws,
-            R.mipmap.main_nwjc};
     private SharedPreferencesUtils sp;
 
     private TextView tv;
@@ -45,7 +36,7 @@ public class Adapter_main_activity extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return listBeen.size();
+        return listBeen == null ? 0 : listBeen.size();
     }
 
     @Override

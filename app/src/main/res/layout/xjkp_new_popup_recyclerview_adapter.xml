@@ -10,6 +10,7 @@
         android:layout_height="30dp"
         android:layout_centerVertical="true"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
         android:src="@mipmap/tabbar_compose_idea" />
 
     <TextView
@@ -17,9 +18,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/iv_xjkp_type_icon"
         android:clickable="true"
         android:text="文字"
+        android:textSize="16dp"
         android:textColor="#000000" />
 
 </RelativeLayout>
